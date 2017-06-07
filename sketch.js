@@ -8,4 +8,12 @@ function setup() {
   }
   console.log(tree);
   tree.traverse();
+
+  var result = tree.search(10);
+  if (result == null) {
+    console.log('no tens');
+  } else {
+    console.log('ten city');
+    console.log(result);
+  }
 }

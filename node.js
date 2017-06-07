@@ -6,11 +6,22 @@ function Node(val) {
 
 Node.prototype.search = function(val) {
   if (this.value == val) {
-    console.log("found " + val);
+    return this;
   } else if (val < this.value && this.left != null) {
-    this.left.search(val);
+    return this.left.search(val);
   } else if (val > this.value && this.right != null) {
-    this.right.search(val);
+    return this.right.search(val);
+  }
+  return null;
+}
+
+Node.prototype.visit = function() {
+  if (this.left != null) {
+    this.left.visit();
+  }
+  console.log(this.value);
+  if (this.right != null) {
+    this.right.visit();
   }
 }
 
