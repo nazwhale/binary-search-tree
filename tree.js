@@ -3,7 +3,11 @@ function Tree() {
 }
 
 Tree.prototype.traverse = function() {
-  this.root.visit();
+  this.root.search();
+}
+
+Tree.prototype.search = function(val) {
+  this.root.search(val);
 }
 
 Tree.prototype.addValue = function(val) {
